@@ -6,7 +6,6 @@ class URLValidator:
     
     @classmethod
     def is_valid_facebook_url(cls, url: str) -> bool:
-        """Accept any valid URL - yt-dlp handles platform detection"""
         if not url:
             return False
         try:
@@ -19,7 +18,6 @@ class URLValidator:
     
     @classmethod
     def normalize_url(cls, url: str) -> str:
-        """Normalize URL for consistent processing"""
         url = re.sub(r'[&?](fbclid|ref|source|__tn__|__cft__|hash)=[^&]*', '', url)
         url = re.sub(r'[&?]$', '', url)
         url = url.replace('web.facebook.com', 'www.facebook.com')
