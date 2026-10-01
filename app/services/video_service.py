@@ -40,8 +40,7 @@ class VideoDownloadService:
         """Extract video information and download URLs"""
         
         # Validate URL
-        if not URLValidator.is_valid_facebook_url(url):
-            raise ValueError("Invalid Facebook URL provided")
+        # URL check removed to support all platforms
         
         # Normalize URL
         normalized_url = URLValidator.normalize_url(url)
